@@ -1,0 +1,182 @@
+The source code files in this group are from Programmer's
+Journal, Volume 8.3, May/June 1990.  The files are identical 
+to those published in the magazine, except where noted,
+and OBJ and EXE files have been added.
+
+The copyrights are held by the programs'authors, as noted in the 
+files.  All other rights are reserved by Oakley Publishing Company, 
+1990.  No one may commercially distribute these files.  Every effort 
+has been made to assure that the program files are correct and 
+complete.  No guarantee, express or implied, is offered as to the 
+correctness of the files, nor to the fitness of the programs for 
+any purpose whatsoever.
+
+The files from Volume 8.3 are:
+
+
+                    Code from Michael Abrash's article "What goes around"
+                    Installment 18, in which Michael starts to work his
+                    VGA circle-drawing magic on the vastly more useful
+                    ellipse.
+
+    ellips1.c       Drawing ellipses - version 1
+    ellips2.c       Drawing ellipses using EGA mode 10h 
+    ellips3.c       Drawing ellipses using VGA mode 12h
+    ellips4.c       New drawellipse routine for ellips1.c (Listing 1)
+
+                    
+                    Code from Daniel E. Greenberg's article "Reentering 
+                    the DOS shell"  A detailed exploration of the 
+                    undocumented INT 2EH entry to the DOS shell-
+                    COMMAND.COM and an XCALL utility to use these
+                    features
+
+    lastmin.doc     Comparison of two portions of code
+    xcall.asm       Complete source for XCALL.COM
+    xcall.com       Latest version of executable
+
+
+                    Code from William S. Hall's article "Order from 
+                    Chaos"  Bill Hall uses a cellular 
+                    automaton as a vehicle to demonstrate graphics
+                    programming using Windows GDI
+
+    wcldlg.h        Dialog constants
+    wincel          make file for WINCEL.EXE
+    wincel.c        Resident segment code
+    wincel.def      Definitions file
+    wincel.dlg      Dialog boxes for WINCEL
+    wincel.exe      WINCEL executable
+    wincel.h        Header file for the WINCEL (declares global variables)
+    wincel.obj      Object code for WINCEL.C
+    wincel.rc       Source Resource file for WINCEL.EXE
+    wincel.res      Compiled resource file for WINCEL.EXE
+    wincelms.c      Miscellaneous code
+    wincelms.obj    Object code for WINCELMS.C
+    wincelnt.c      Initialization code discarded after use
+    wincelnt.obj    Object code for WINCELNT.C
+
+
+                    Code from Chip Little's article "Mouse Messages"
+                    Efficient processing of mouse input in OS/2
+                    Presentation Manager applications.
+
+    hittest         Make file for HITTTEST.EXE 
+    hittest.c       Source for HITTEST
+    hittest.def     Definitions for HITTEST
+    hittest.exe     OS/2 Executable file 
+    hittest.obj     Compiled hittest.c
+
+
+                    Code from Larry Smith's article "Accessing 
+                    High Memory"  Exploring the extended-memory
+                    block-move features of AT-class machines
+
+    himem.asm       Extended memory TSR for a TSR 2100 printer
+    bios.asm        Extending the AT BIOS to turn off gate 20
+    bios.com        may not work with packed EXE's
+
+
+                    Code from John Otken's article "Advanced 
+                    segmentation"  John explains 80x86 segmentation
+                    directives, how to use segments wisely in
+                    your assembly language programming, along
+                    with advanced run-time table building
+                    techniques.
+
+    asm.inc         Basic include file
+    lnktbl1.asm     Link time Table Building (listing 1)
+    lnktbl2.asm     CMD_DAT segment (listing 2)
+    lnktbl3.asm     Link time code (listing 3
+    lnktbl4.asm     Terminate code (listing 4)
+    lnktbl5.asm     (listing 5)
+
+
+                    Code from Tom Swan's article "Let's 
+                    List again"  Tom continues work on his 
+                    "View Anything" file viewer by creating
+                    some useful list and selection routines
+                    for files and directories using the object-
+                    oriented extensions in Turbo Pascal.
+
+    dirtest.exe     DIRTEST executable
+    dirtest.pas     DIRTEST program in Turbo Pascal (ver 5.5)
+    test1.exe       TEST1 executable
+    test1.pas       TEST1 program
+    test2.exe       TEST2 executable
+    test2.pas       TEST2 program
+    ucmds.pas       command object definitions
+    ucmds.tpu       compiled command object unit
+    ufiles.pas      fileObj definition
+    ufiles.tpu      compiled fileObj unit
+    uprogram.pas    "run" procedure
+    uprogram.tpu    compiled run procedure unit
+    uselect.pas     selection objects definition
+    uselect.tpu     compiled selection unit
+    ustritem.pas    string item object definition
+    ustritem.tpu    compiled string item unit
+    udir.pas        fileItem and directory object definitions
+    udir.tpu        compiled udir unit
+    uhelp.pas       helpObj object definition
+    uhelp.tpu       compiled uhelp unit
+    uitem.pas       item object definition
+    uitem.tpu       compiled uitem unit
+    ukeys.pas       keyboard input unit
+    ukeys.tpu       compiled ukeys unit
+    ulist.pas       list object definition  
+    ulist.tpu       compiled ulist unit
+    umenu.pas       menu object definition
+    umenu.tpu       compiled umenu unit
+    unew.pas        newObj definition
+    unew.tpu        compiled unew unti
+    uscreen.pas     screen (windows) unit
+    uscreen.tpu     compiled uscreen unit
+
+
+                    Code from John Otken's article 
+                    "386 Debugging"
+
+    386.mak         Make file
+    386_asm.asm     Test 386 stack trap for assembly language
+    386_c.c         Test program for debugging
+    386_msc.asm     test 386 stack trap for Microsoft C
+    386_trap.asm    386 memory protection stack fault trap
+
+
+                    Code from the letters to the editor.
+
+                    Code from B.H. Robinson's letter
+
+    std_tst.c       Listing of C function to test whether
+                    STDIN or STDOUT has been redirected.
+    ioctlt.c        Listing of program to call and test the std_tst function.
+    ioctlt.exe      Executable IOCTLT program.
+
+    
+                    Code from Jan Fertig's letter
+
+    library.prm     Versimake file to update a library of ASM routines
+
+
+If you want to subscribe to Programmer's Journal, purchase a code-disk
+subscription, order back issues, or buy one of our nifty T-Shirts, 
+please write to:
+
+                      Programmer's Journal
+                      P.O. Box 70167
+                      Eugene, OR 97401-0110
+
+or call:              800-234-0386
+
+
+One-year subscription prices are:
+
+Magazine subscription                  DiskScription
+    $19.95---------------U.S.--------------$39.95
+    $29.95---------------Can./Mex.---------$49.95
+    $39.95---------------Foreign-----------$54.95
+
+
+We welcome your comments about the magazine and the code.  Write to us 
+at the address above.
+

@@ -1,0 +1,31 @@
+/* 
+ * Resource file for the Windows cellular automaton demo
+ *
+ * Written by Bill Hall
+ * 3665 Benton Street, #66
+ * Santa Clara, CA 95051
+ *
+ */
+#include <windows.h>
+#include "wincel.h"
+#include "wcldlg.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APPNAME  "wincel"	/* application name */
+    IDS_ICON	 "wcel"		/* icon string */
+    IDS_TITLE	 "Windows Cellular Automaton Demo" /* title bar */
+END
+
+wincel MENU
+BEGIN
+    POPUP "&Control"
+    BEGIN
+	MENUITEM "&New", IDM_START
+	MENUITEM "&Paramters...", IDM_PARAMS
+	MENUITEM Separator
+	MENUITEM "A&bout...", IDM_ABOUT
+    END
+END
+
+rcinclude wincel.dlg

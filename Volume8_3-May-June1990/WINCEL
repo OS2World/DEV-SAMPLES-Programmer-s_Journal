@@ -1,0 +1,34 @@
+# Wincel - Windows cellular automaton demo
+
+# Written by Bill Hall
+# 3665 Benton Street, #66
+# Santa Clara, CA 95051
+
+# no debug compile
+cp=cl -c -AM -Gsw -W3 -Os -Zpe -FPa
+
+# libraries
+LIBS=mlibw mlibcaw /NOD
+
+# Dependencies
+wincel.res : wincel.rc wincel.h wcldlg.h wincel.dlg
+    rc -r wincel.rc
+
+wincel.obj : wincel.c wincel.h wcldlg.h
+    $(cp) -NT _RES wincel.c
+
+wincelnt.obj : wincelnt.c wincel.h
+    $(cp) -NT _INIT wincelnt.c
+
+wincelms.obj : wincelms.c wincel.h wcldlg.h
+    $(cp) -NT _MISC wincelms.c
+    
+wincel.exe : wincel wincel.def wincel.obj wincelnt.obj wincelms.c
+    link4 wincel wincelnt wincelms,wincel/align:16,wincel/m,$(LIBS),wincel.def
+    rc wincel.res
+    mapsym wincel
+    mark memory font wincel.exe
+
+wincel.exe : wincel.res
+    rc wincel.res
+    mark memory font wincel.exe

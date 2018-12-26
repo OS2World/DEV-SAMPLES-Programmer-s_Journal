@@ -1,0 +1,9 @@
+NAME        HITTEST WINDOWAPI
+
+DESCRIPTION 'Hittest demonstration program'
+PROTMODE
+HEAPSIZE    1024
+STACKSIZE   8192
+EXPORTS     ClientWndProc
+            HittestWndProc
+

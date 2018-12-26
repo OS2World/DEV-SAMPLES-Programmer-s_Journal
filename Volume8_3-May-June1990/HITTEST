@@ -1,0 +1,19 @@
+#
+#   Hittest.exe make file
+#
+
+all:    hittest.exe rc.exe
+
+hittest.exe : hittest.obj hittest.def hittest
+     link /co /nod hittest, /align:16, NUL, slibcp os2, hittest
+
+rc.exe : rc.obj rc.def hittest
+     link /co /nod rc, /align:16, NUL, slibcp os2, rc
+
+
+hittest.obj : hittest.c hittest
+     cl /Zi /c /G2sw /W3 hittest.c
+
+rc.obj : rc.c hittest
+     cl /Zi /c /G2sw /W3 rc.c
+

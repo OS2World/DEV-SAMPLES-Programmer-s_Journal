@@ -1,0 +1,44 @@
+# LIBRARY.PRM
+#    Updates a library file of ASM routines
+
+define(libname, "LIBRARY")    
+
+# 1. Make list1, a list of all source files
+#    in the current directory   
+#    whose object files must be refreshed in the library
+
+define(list1, "")
+automake((*.ASM),         
+	(),
+	[libname].LIB,
+	append(list1, "[dne] "))
+
+# 2. Make list2, a list of all source files
+#    out of those present in list1 (if any)
+#    whose object files must be recreated
+
+define(list2, "")
+automake(([list1]),
+	(),            
+        [rn].OBJ,
+        append(list2,"[dne] "))
+
+# 3. Recreate object files from source files in list2
+
+repeat(([list2]),
+	detach("MASM /Mx[rne];"))
+wait()    
+exit(1)
+
+# 4. Refresh object files in the library
+
+repeat((*.OBJ),
+	run("LIB[libname].LIB -+ [rne];")
+	exit(1))          
+
+# 5. Update library listing and cleanup
+
+make([libname].LIB,
+	[libname].LST,
+	run("LIB [dne], [tne]")
+

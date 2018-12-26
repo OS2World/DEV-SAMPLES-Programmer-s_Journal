@@ -1,0 +1,64 @@
+HERE IS THE OLD ROUTINE - DOESN'T PROPERLY SET UP ES FOR SCASB:
+check_command_string proc near		
+	push di
+	cld				;Check for first quotation mark -
+	mov al,'"'			; replace with null (20h) if present.
+	mov di,82h			;Command tail starts at 82h.
+	xor ch,ch
+	mov cl,byte ptr ds:[080h]	;Length of command tail stored at 80h
+	repne scasb
+	jcxz end_check
+	mov byte ptr [di-1],20h
+			
+	std				;Change direction & check for
+	add di,cx			; last quotation mark.
+	dec di
+	dec di
+	repne scasb
+	jcxz end_check
+	mov byte ptr [di+1],20h
+
+end_check:
+	cld 
+	pop di
+	ret
+check_command_string endp
+
+
+
+HERE IS THE NEW ROUTINE - DOES PROPERLY SET UP ES
+;-------------------------------------------------------------------------------;Check_command_string removes first & last quotation marks from command
+;string.  This lets xcall pass redirection request to COMMAND.COM. This
+;routine saves ES & DI.
+;-------------------------------------------------------------------------------
+check_command_string proc near		
+	push di
+	push es
+	mov ax,ds
+	mov es,ax
+
+	xor ch,ch
+	mov cl,byte ptr ds:[080h]	;Length of command tail stored at 80h
+	jcxz end_check			;All done if no command tail
+	cld				;Check for first quotation mark -
+	mov al,'"'			; replace with null (20h) if present.
+	mov di,82h			;Command tail starts at 82h.
+	repne scasb
+	jnz end_check
+	mov byte ptr [di-1],20h
+			
+	std				;Change direction & check for
+	add di,cx			; last quotation mark.
+	dec di
+	dec di
+	repne scasb
+	cld 
+	jnz end_check
+	mov byte ptr [di+1],20h
+
+end_check:
+	pop es
+	pop di
+	ret
+check_command_string endp
+

@@ -1,0 +1,27 @@
+2 DIALOG LOADONCALL MOVEABLE DISCARDABLE 16, 16, 168, 104
+STYLE WS_DLGFRAME | WS_POPUP
+BEGIN
+	   CONTROL "Iterations between displays:", -1, "static", SS_LEFT | WS_CHILD, 8, 44, 44, 24
+	   CONTROL "Color Table:", -1, "static", SS_LEFT | WS_CHILD, 108, 12, 48, 8
+	   CONTROL "Number of States:", -1, "static", SS_LEFT | WS_CHILD, 8, 12, 32, 24
+	   CONTROL "", IDD_STATES, "listbox", LBS_NOTIFY | LBS_SORT | LBS_STANDARD | WS_BORDER | WS_VSCROLL | WS_TABSTOP | WS_CHILD, 56, 12, 37, 25
+	   CONTROL "", IDD_ITERATIONS, "listbox", LBS_NOTIFY | LBS_SORT | LBS_STANDARD | WS_BORDER | WS_VSCROLL | WS_TABSTOP | WS_CHILD, 56, 43, 37, 25
+	   CONTROL "", IDD_COLORS, "listbox", LBS_NOTIFY | LBS_SORT | LBS_STANDARD | WS_BORDER | WS_VSCROLL | WS_TABSTOP | WS_CHILD, 108, 23, 50, 41
+	   CONTROL "&Ok", DT_ABOUT, "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 32, 80, 32, 16
+	   CONTROL "&Cancel", DT_PARAMS, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 104, 80, 32, 16
+END
+
+1 DIALOG LOADONCALL MOVEABLE DISCARDABLE 12, 8, 140, 120
+STYLE WS_DLGFRAME | WS_POPUP
+BEGIN
+	   CONTROL "Microsoft Windows", -1, "static", SS_CENTER | WS_CHILD, 8, 8, 124, 8
+	   CONTROL "Windows Cellular Automaton Demo", -1, "static", SS_CENTER | WS_CHILD, 4, 24, 132, 8
+	   CONTROL "Written by", -1, "static", SS_CENTER | WS_CHILD, 4, 38, 132, 8
+	   CONTROL "William S. Hall", -1, "static", SS_CENTER | WS_CHILD, 4, 50, 132, 8
+	   CONTROL "3665 Benton Street, #66", -1, "static", SS_CENTER | WS_CHILD, 4, 60, 132, 8
+	   CONTROL "&Ok", DT_ABOUT, "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 54, 104, 32, 14
+	   CONTROL "Santa Clara, CA 95051", -1, "static", SS_CENTER | WS_CHILD, 4, 70, 132, 8
+	   CONTROL "See Programmer's Journal 8.3, May/June, 1990", -1, "static", SS_CENTER | WS_CHILD, 4, 84, 132, 16
+END
+
+

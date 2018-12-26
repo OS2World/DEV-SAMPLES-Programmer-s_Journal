@@ -1,0 +1,35 @@
+; Definitions file for the Windows cellular automaton demo
+;
+; Written by Bill Hall
+; 3665 Benton Street, #66
+; Santa Clara, CA 95051
+;
+
+; Program name
+NAME
+
+; Description string
+DESCRIPTION 'Windows cellular automaton demo'
+
+; Program to run if run from MS-DOS
+STUB 'Winstub.exe'
+
+; Heap and stack sizes
+HEAPSIZE	1024
+STACKSIZE	4096
+
+; Attributes of code and data segments
+CODE	MOVEABLE
+DATA	MOVEABLE MULTIPLE
+
+; Attributs of particular segments
+SEGMENTS
+    _RES PRELOAD MOVEABLE DISCARDABLE
+    _INIT LOADONCALL MOVEABLE DISCARDABLE
+    _MISC LOADONCALL MOVEABLE DISCARDABLE
+
+; Functions called by Windows
+EXPORTS
+    MainWndProc		@1
+    AboutBoxProc	@2
+    ParamBoxProc	@3
